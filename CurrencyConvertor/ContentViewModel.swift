@@ -41,7 +41,7 @@ class ContentViewModel: ObservableObject {
             let data = try? Data(contentsOf: url)
             guard let data = data,
                   let plist = try? PropertyListSerialization.propertyList(from: data, format: nil) as? [String: String],
-                let key = plist["API_KEY"] else {
+                  let key = plist["API_KEY"] else {
                 errorMessage = "Could not fetch rates."
                 return
             }
